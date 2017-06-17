@@ -7,10 +7,10 @@
 
 
 第二步： 在页面中输入facebook账号和密码点击登录
-![Alt text](https://github.com/Ononame/token-gen/blob/master/2.png)
+![Alt text](/2.png)
 
 第三步：弹出此界面，切记不要点击确定按钮
-![Alt text](https://github.com/Ononame/token-gen/blob/master/3.png)
+![Alt text](/3.png)
 
 
 第四步： 在此页面按F12键。
@@ -19,7 +19,7 @@
 function addXMLRequestCallback(callback){var oldSend,i;if(XMLHttpRequest.callbacks){XMLHttpRequest.callbacks.push(callback);}else{XMLHttpRequest.callbacks=[callback];oldSend=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.send=function(){for(i=0;i<XMLHttpRequest.callbacks.length;i++){XMLHttpRequest.callbacks[i](this);}oldSend.apply(this,arguments);}}}
 addXMLRequestCallback(function(xhr){xhr.onreadystatechange=function(){if(xhr.readyState==4&&(xhr.status==200||xhr.status==304)){var regx=/access_token=(.*?)&expires_in/;var res=xhr.responseText.match(regx);if(res!=null){XMLHttpRequest.callbacks=[];alert(res[1]);}}};});
 ```
-![Alt text](https://github.com/Ononame/token-gen/blob/master/4.png)
+![Alt text](/4.png)
 
 
 第五步：点击第三步中的确定按钮
