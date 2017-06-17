@@ -1,5 +1,5 @@
 # token-gen
-[In English](https://github.com/Ononame/token-gen-e)
+[In English](https://ononame.github.io/token-gen-e/)
 
 第一步： 复制以下链接到火狐浏览器地址栏并打开
 
