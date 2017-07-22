@@ -16,7 +16,8 @@
 第四步： 在此页面按F12键。
 将以下代码复制到红色箭头处，按回车键。
 ```
-function addXMLRequestCallback(callback){var oldSend,i;if(XMLHttpRequest.callbacks){XMLHttpRequest.callbacks.push(callback);}else{oldSend=XMLHttpRequest.prototype.send;XMLHttpRequest.callbacks=[callback];XMLHttpRequest.prototype.send=function(){for(i=0;i<XMLHttpRequest.callbacks.length;i++){XMLHttpRequest.callbacks[i](this);}oldSend.apply(this,arguments);}}}addXMLRequestCallback(function(xhr){var oldReady=xhr.onreadystatechange;xhr.onreadystatechange=function(){oldReady();if(xhr.readyState==4&&xhr.status==200){var regx=/access_token=(.*?)&expires_in/;var res=xhr.responseText.match(regx);if(res!=null){XMLHttpRequest.callbacks=[];alert(res[1]);}}};});
+function addXMLRequestCallback(callback){var oldSend,i;if(XMLHttpRequest.callbacks){XMLHttpRequest.callbacks.push(callback);}else{oldSend=XMLHttpRequest.prototype.send;XMLHttpRequest.callbacks=[callback];XMLHttpRequest.prototype.send=function(){for(i=0;i<XMLHttpRequest.callbacks.length;i++){XMLHttpRequest.callbacks[i](this);}oldSend.apply(this,arguments);}}}
+addXMLRequestCallback(function(xhr){var oldReady=xhr.onreadystatechange;xhr.onreadystatechange=function(){oldReady();if(xhr.readyState==4&&xhr.status==200){var regx=/access_token=(.*?)&expires_in/;var res=xhr.responseText.match(regx);if(res!=null){XMLHttpRequest.callbacks=[];alert(res[1]);}}};});
 ```
 ![Alt text](/4.png)
 
